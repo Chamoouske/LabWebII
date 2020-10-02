@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Introdução ao PHP</title>
+        <link rel="stylesheet" href="../css/bootstrap-reboot.min.css">
+        
+    </head>
+
+    <body>
+        <br><br>
+        <div class="container" align="center">
+            <form id="form1" method="POST" action="calculo.php">
+                <h2>Entre com os valores</h2>
+                <table width="290" weight="143" border="1" cellpandding="2" cellspacing="0">
+                    <tr>
+                        <td width="85">Valor 1:</td>
+                        <td width="199"><input type="text" name="valor1" id="Valor1" autofocus></td>
+                    </tr>
+                    <tr>
+                        <td width="85">Valor 2:</td>
+                        <td width="199"><input type="text" name="valor2" id="Valor2"></td>
+                    </tr>
+                    <tr>
+                        <td width="85">Valor 3:</td>
+                        <td width="199"><input type="text" name="valor3" id="Valor3"></td>
+                    </tr>
+                </table>
+                <input type="submit" value="Calcular" onclick="return validar()">
+            </form>
+        </div>
+    </body>
+</html>
