@@ -1,4 +1,4 @@
-<?php include('crud.php'); ?>
+<?php include('BD/crud.php'); ?>
 
 <?php
 # recupera o registro para edição
@@ -25,7 +25,7 @@ if (isset($_GET['edit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Produtos</title>
-    <?php include('header.php'); ?>
+    <?php include('header-footer/header.php'); ?>
     <!-- teste se a sessão existe e exibe sua mensagem -->
     <?php if (isset($_SESSION['message'])) : ?>
         <div class="msg">
@@ -54,6 +54,7 @@ if (isset($_GET['edit'])) {
     <table>
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Nome</th>
                 <th>Descrição</th>
                 <th>Qtd Estoque</th>
@@ -66,6 +67,7 @@ if (isset($_GET['edit'])) {
         <!-- Início while -->
         <?php while ($rs = mysqli_fetch_array($results)) { ?>
             <tr>
+                <td><?php echo $rs['id']; ?></td>
                 <td><?php echo $rs['nome']; ?></td>
                 <td><?php echo $rs['descricao']; ?></td>
                 <td><?php echo $rs['qtdEstoque'] ?></td>
@@ -120,9 +122,9 @@ if (isset($_GET['edit'])) {
                 <button class="btn" type="submit" name="adiciona">Adicionar</button>
             <?php endif ?>
 
-            <a href="index.php" class="voltar_btn">Tela Principal</a>
+            <a href="BD/fecharBD.php" class="voltar_btn">Tela Principal</a>
         </div>
     </form>
 
     <!-- Toda a parte final do html tá no arquivo footer.php e é carregado apartir daqui -->
-    <?php include('footer.php');
+    <?php include('header-footer/footer.php');
