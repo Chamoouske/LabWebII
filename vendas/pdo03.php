@@ -17,9 +17,14 @@ try {
     # método que retorna todos os registros obtidos do comando SQL
     $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    echo '<pre>';
-    print_r($lista);
-    echo '</pre>';
+    //echo '<pre>';
+    //print_r($lista);
+    //echo '</pre>';
+
+    foreach ($lista as $key => $registro) {
+        echo($registro['nome']);
+        echo '<hr>';
+    }
 
     # captura e trata o erro que possa ocorrer
 } catch (PDOException $e) {

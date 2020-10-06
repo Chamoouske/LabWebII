@@ -1,9 +1,10 @@
 body {
     font-size: 19px;
+    background-image: linear-gradient(to right, #FFB6B6, #FFCEB6, #FFDDB6, #FFEFB6, #FCFFB6, #EDFFB6, #DDFFB6, #D0FFB6, #BEFFB6, #B6FFC3, #B6FFD8, #B6FFE8, #B6FFFA, #B6EFFF, #B6DDFF, #B6CBFF, #B6B6FF, #DAB6FF, #EDB6FF, #FFB6FA)
 }
 
 table {
-    width: 50%;
+    width: 100%;
     margin: 30px auto;
     border-collapse: collapse;
     text-align: left;
@@ -52,7 +53,6 @@ footer {
 }
 
 .rodape {
-    background-color: white;
     width: 24%;
 }
 
@@ -168,6 +168,42 @@ footer {
     position: relative;
     text-align: center;
     font-size: 40px;
-    width: 50%;
+    width: auto;
     margin: auto;
+}
+
+.lista {
+    width: 45%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+.menu-nav {
+    top: 20%;
+    position: relative;
+    color: #000;
+    text-align: center;
+}
+
+.btn-menu {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.btn-menu:hover {
+    background-image: linear-gradient(to right, #FF00FB, #F900F9, #E400F9, #DC00F9, #D500F9, #C300F9, #BB00F9, #B200F9, #A600F9, #9E00F9, #9500F9, #8900F9, #8100F9, #7800F9, #7000F9, #6800F9, #5F00F9, #5300F9, #4B00F9, #4200F9, #3200F9, #2A00F9, #2100F9, #1900F9, #1100F9);
+    color: #ffff;
 }

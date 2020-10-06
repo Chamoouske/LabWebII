@@ -5,7 +5,7 @@
 if (isset($_GET['edit'])) {
     $id = $_GET['edit'];
     $update = true;
-    $record = mysqli_query($db, "SELECT * FROM clientes WHERE id=$id");
+    $record = mysqli_query($db, "SELECT * FROM clientes WHERE idcli=$id");
     # testa o retorno do select e cria o vetor com os registros trazidos
 
     if ($record) {
@@ -23,7 +23,7 @@ if (isset($_GET['edit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Produtos</title>
+    <title>Clientes</title>
     <?php include('header-footer/header.php'); ?>
     <!-- teste se a sessão existe e exibe sua mensagem -->
     <?php if (isset($_SESSION['message'])) : ?>
@@ -47,38 +47,39 @@ if (isset($_GET['edit'])) {
         </div>
     <?php endif ?>
     <!-- ------------------------------------------------- -->
-
+    <div class="lista">
     <!-- recupera os registros do banco de dados e exibe na página -->
-    <?php $results = mysqli_query($db, "SELECT * FROM clientes"); ?>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Telefone</th>
-                <th>Email</th>
-                <th colspan="2">Ação</th>
-            </tr>
-        </thead>
-        <!-- cria o vetor com os registros trazidos do select -->
-        <!-- Início while -->
-        <?php while ($rs = mysqli_fetch_array($results)) { ?>
-            <tr>
-                <td><?php echo $rs['idcli']; ?></td>
-                <td><?php echo $rs['nomecli']; ?></td>
-                <td><?php echo $rs['fonecli']; ?></td>
-                <td><?php echo $rs['emailcli']; ?></td>
-                <td>
-                    <a href="produtos.php?edit=<?php echo $rs['idcli']; ?>" class="edit_btn">Alterar</a>
-                </td>
-                <td>
-                    <a href="crud.php?del=<?php echo $rs['idcli']; ?>" class="del_btn">Remover</a>
-                </td>
-            </tr>
-        <?php } ?>
-        <!-- Fim while -->
-    </table>
-    <!-- ------------------------------------------------------------ -->
+        <?php $results = mysqli_query($db, "SELECT * FROM clientes"); ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th colspan="2">Ação</th>
+                </tr>
+            </thead>
+            <!-- cria o vetor com os registros trazidos do select -->
+            <!-- Início while -->
+            <?php while ($rs = mysqli_fetch_array($results)) { ?>
+                <tr>
+                    <td><?php echo $rs['idcli']; ?></td>
+                    <td><?php echo $rs['nomecli']; ?></td>
+                    <td><?php echo $rs['fonecli']; ?></td>
+                    <td><?php echo $rs['emailcli']; ?></td>
+                    <td>
+                        <a href="clientes.php?edit=<?php echo $rs['idcli']; ?>" class="edit_btn">Alterar</a>
+                    </td>
+                    <td>
+                        <a href="BD/crudcli.php?del=<?php echo $rs['idcli']; ?>" class="del_btn">Remover</a>
+                    </td>
+                </tr>
+            <?php } ?>
+            <!-- Fim while -->
+        </table>
+        <!-- ------------------------------------------------------------ -->
+    </div>
 
     <form method="post" action="BD/crudcli.php">
         <!-- campo oculto - contem o id do registro que vai ser atualizado -->
@@ -111,8 +112,6 @@ if (isset($_GET['edit'])) {
             <?php else : ?>
                 <button class="btn" type="submit" name="adiciona">Adicionar</button>
             <?php endif ?>
-
-            <a href="BD/fecharBD.php" class="voltar_btn">Tela Principal</a>
         </div>
     </form>
 

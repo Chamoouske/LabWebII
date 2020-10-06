@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" href="css/testes.css">
 <link rel="stylesheet" type="text/css" href="css/uni.css">
+<link rel="shortcut icon" href="css/UniIcon.png">
 </head>
 
 <body>
@@ -27,4 +28,10 @@
         <div class="empre">
             <label>UniCorp</label>
         </div>
+        <br>
+        <div class="menu-nav"><!-- Menu de navegação-->
+            <a class="btn-menu" href="index.php">Início</a>
+            <a class="btn-menu" href="clientes.php">Lista de Clientes</a>
+            <a class="btn-menu" href="produtos.php">Lista de Produtos</a>
+        </div><!-- Fim mennu de navegação-->
     </header>
